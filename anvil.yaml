@@ -1,9 +1,34 @@
+dependencies: []
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/anvil/email.yml
+  client_config: {}
+  server_config: {}
+package_name: Feedback_Form
 allow_embedding: false
-package_name: M3_App_1
-name: M3 App 1
-startup_form: Form1
-renamed: true
+name: Feedback Form
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
   server_spec: null}
-dependencies: []
-services: []
+metadata: {title: Feedback Form}
+startup_form: Form1
+db_schema:
+  feedback:
+    client: none
+    server: full
+    columns:
+    - name: name
+      admin_ui: {order: 0, width: 200}
+      type: string
+    - name: email
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: feedback
+      admin_ui: {width: 200, order: 2}
+      type: string
+    - name: created
+      admin_ui: {width: 200, order: 3}
+      type: datetime
+    title: Feedback
+renamed: true
